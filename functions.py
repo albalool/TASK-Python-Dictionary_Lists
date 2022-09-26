@@ -1,11 +1,17 @@
 from books import books
+# "id": 31,
+ #       "color": "white",
+  #      "authors": [{"name": "Jordan Peterson", "id": 7}],
+   #     "title": "12 Rules for Life: An Antidote to Chaos",
+    #    "available": False,
+        
 
 print(books[0])
 #  number_of_authors(book)
 #  recieves a book dictionary
 #  returns the number of authors that the book has
 def number_of_authors(book):
-    ...
+    return len(book["authors"])
 
 
 print(number_of_authors(books[0]))
@@ -15,9 +21,10 @@ print(number_of_authors(books[0]))
 #  # recieves a list of book dictionaries
 #  # returns the book dictionary with the same id as the book_id provided
 def get_book_by_id(book_id, books):
-    ...
-
-
+    for book in books:
+        if book_id == book["id"]:
+            return book
+            
 print(get_book_by_id(38, books))
 
 
