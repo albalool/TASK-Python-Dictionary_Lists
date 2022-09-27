@@ -64,10 +64,10 @@ print(get_book_property("title", books[0]))
 
 def calculate_not_available_books(books):
     unavailable_books = []
-    if books not in books:
-        unavailable_books.append(books)
+    for book in books:
+        if book["available"] == False:
+            unavailable_books.append(book)
     return unavailable_books
-
 
 print(calculate_not_available_books(books))
 
@@ -76,9 +76,9 @@ print(calculate_not_available_books(books))
 # receives a author name (string)
 # recieves a list of book dictionaries
 # # returns the book dictionary that contains an author with the author name provided
-# def get_book_by_author_name(author_name, books):
-#     for book in books:
-#         if author_name == str(books["author"]):
+def get_book_by_author_name(author_name, books):
+    for book in books:
+        if author_name == str(books["author"]):
 
 
-# print(get_book_by_author_name("Neil Gaiman", books))
+print(get_book_by_author_name("Neil Gaiman", books))
